@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+    <head>
+        <title>Scroll</title>
+        <meta http-equiv='content-type' content='text/html;charset=utf-8' />
+        <style>
+            /* external.css */
+            *{margin: 0;padding: 0;}
+            body{height: 2000px;}
+            header{width: 100%;height: 200px;background-color: red;position: fixed;transition: 1s;}
+        </style>
+    </head>
+<body>
+    <header>
+    <h1>This is the header I want to change</h1>
+    </header>
+    <script>
+        var doc, bod, htm;
+        addEventListener('load', function(){
+            doc = document; bod = doc.body; htm = doc.documentElement;
+            addEventListener('scroll', function(){
+                doc.querySelector('header').style.height = htm.scrollTop > 199 ? '100px' : '200px';
+            });
+        });
+    </script>
+</body>
+</html>
